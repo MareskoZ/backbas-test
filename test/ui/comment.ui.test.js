@@ -12,7 +12,7 @@ const webdriver = require('selenium-webdriver');
 const By = webdriver.By;
 const until = webdriver.until;
 
-const server = supertest.agent("https://qa-task.backbasecloud.com/api");
+const server = supertest.agent("https://"+MAIN_DATA.BASE_URL+"/api");
 const baseReq = server.auth(MAIN_DATA.BASIC_AUTH.username, MAIN_DATA.BASIC_AUTH.password);
 
 let commentText = 'This test is completed!';

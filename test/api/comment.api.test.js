@@ -6,7 +6,7 @@ const chai = require('chai'),
     expect = chai.expect,
     should = chai.should();
 
-const server = supertest.agent("https://qa-task.backbasecloud.com/api");
+const server = supertest.agent("https://"+MAIN_DATA.BASE_URL+"/api");
 const baseReq = server.auth(MAIN_DATA.BASIC_AUTH.username, MAIN_DATA.BASIC_AUTH.password);
 
 let token, slug;
@@ -39,7 +39,7 @@ describe('Set of api test cases for "CR*D Comments on articles"', () => {
             });
     });
 
-    describe("CASE1 + CASE2 sute",() => {
+    describe("Set of Aai cases ",() => {
         it("CASE1 - Add comment", (done) => {
             baseReq
                 .post('/articles/'+slug+'/comments')
