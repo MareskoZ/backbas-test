@@ -39,8 +39,6 @@ describe('Set of api test cases for "CR*D Comments on articles"', () => {
             });
     });
 
-
-
     describe("CASE1 + CASE2 sute",() => {
         it("CASE1 - Add comment", (done) => {
             baseReq
