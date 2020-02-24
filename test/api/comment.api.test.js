@@ -73,30 +73,27 @@ describe('Set of api test cases for "CR*D Comments on articles"', () => {
                     done();
                 });
         });
-    });
-
-
-
-    describe("CASE3 - Delete comment",() => {
-        it("Add Comment to an Article", (done) => {
-            commentId.should.not.be.equal('undefined');
-            baseReq
-                .delete('/articles/'+slug+'/comments/'+commentId)
-                .set('jwtauthorization', 'Token ' + token)
-                .end((err,res)=>{
-                    res.status.should.equal(204);
-                    done()
-                });
-        });
-        it("Check that comment was deleted", (done) =>{
-            baseReq
-                .get('/articles/'+slug+'/comments')
-                .set('jwtauthorization', 'Token ' + token)
-                .end((err,res)=>{
-                    res.status.should.equal(200);
-                    expect(res.body.comments).to.have.lengthOf(0);
-                    done();
-                });
+        describe("CASE3 - Delete comment",() => {
+            it("Add Comment to an Article", (done) => {
+                commentId.should.not.be.equal('undefined');
+                baseReq
+                    .delete('/articles/'+slug+'/comments/'+commentId)
+                    .set('jwtauthorization', 'Token ' + token)
+                    .end((err,res)=>{
+                        res.status.should.equal(204);
+                        done()
+                    });
+            });
+            it("Check that comment was deleted", (done) =>{
+                baseReq
+                    .get('/articles/'+slug+'/comments')
+                    .set('jwtauthorization', 'Token ' + token)
+                    .end((err,res)=>{
+                        res.status.should.equal(200);
+                        expect(res.body.comments).to.have.lengthOf(0);
+                        done();
+                    });
+            });
         });
     });
 });
