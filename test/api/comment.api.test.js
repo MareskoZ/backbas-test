@@ -56,7 +56,6 @@ describe('Set of api test cases for "CR*D Comments on articles"', () => {
                     expect(res.body.comment.body).to.equal(API_DATA.REQUESTS.AddComments.comment.body);
                     expect(res.body.comment.author.username).to.equal(MAIN_DATA.USERS.User1.username);
 
-
                     commentId = res.body.comment.id;
                     commentBody = res.body.comment;
 
