@@ -91,6 +91,11 @@ describe('Set of api test cases for "CR*D Comments on articles"', () => {
                         done();
                     });
             });
+            after('', (done) =>{
+                done()
+                // I decided not delete Article coz it isn't affected other cases and as a bonus it give opportunity to check if something went wrong
+            });
         });
+
     });
 });

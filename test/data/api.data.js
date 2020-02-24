@@ -1,3 +1,4 @@
+let date = new Date();
 const REQUESTS = {
     Login: {
         user:{
@@ -7,7 +8,7 @@ const REQUESTS = {
     },
     CreateArticle: {
         article: {
-            title: "Test Tittle",
+            title: "Test Tittle " + date ,
             description: "some description",
             body: "Something is here",
             tagList: []
